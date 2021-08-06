@@ -1,7 +1,7 @@
 # ArtGallery
 ArtGallery is a project created for the project defense of the Agnular Softuni Course (July - August 2021) (https://softuni.bg/trainings/3473/angular-july-2021) as part of the JS Web Course (May - August 2021)
 
-Project Requirements: [Angular Project Assignment.docx](https://github.com/TheStormWeaver/ArtGallery/files/6945894/Angular.Project.Assignment.docx)
+Project requirements document: [Angular Project Assignment.docx](https://github.com/TheStormWeaver/ArtGallery/files/6945894/Angular.Project.Assignment.docx)
 
 ## About project
 ArtGallery "WaveArts" is an app that serves as an online art gallery. The site's main purpose is to collect all kinds of art including: literature (poetry, drama, story), the visual arts (paintings, drawings), the graphic arts (designs and other forms expressed on flat surfaces), the plastic arts (sculptures), the decorative arts (enamelwork, furniture design, mosaic), the performing arts (theatre, dance, music), and architecture. Visitors can publish their own art pieces. Once published, the art piece goes to the Firebase backend and is displayed in the "View Art" tab along with all other art. The given user that created the art piece can edit it at any given time, whilst updating in the database or even delete it, removing it permanently from the database. Art pieces can also be liked by other users, giving the artist more exsposure. Each user has a profile page that they can edit thier profile icon, to their liking.
