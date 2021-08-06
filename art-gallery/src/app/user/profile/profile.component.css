@@ -1,0 +1,72 @@
+body {
+  background-color: #f9f9fa;
+}
+
+.padding {
+  padding: 20rem;
+  background-image: url("/assets/dart.jpg");
+}
+
+.card {
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+  box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+  border: none;
+  margin-bottom: 30px;
+  word-wrap: normal;
+}
+
+.user-card-full .user-profile {
+  border-radius: 5px 0 0 5px;
+}
+
+.bg-c-lite-green {
+  background: -webkit-gradient(
+    from(#7863f2),
+    to(#ea00ff)
+  );
+  background: linear-gradient(to right, #7863f2, #ea00ff);
+}
+
+.user-profile {
+  padding: 40px 0;
+}
+
+.card-block {
+  padding: 1.25rem;
+}
+
+.user-card-full .social-link li {
+  display: inline-block;
+}
+
+.user-card-full .social-link li a {
+  font-size: 20px;
+  margin: 0 10px 0 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+img {
+  width: 100%;
+  margin-top: 30px
+}
+
+.move {
+  padding-top: 20px;
+  padding-left: 70px;
+}
+
+.place {
+  margin-top: 40px;
+  margin-left: 70px;
+}
+
+.change {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.this {
+  text-align: center;
+}
