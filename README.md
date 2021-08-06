@@ -36,7 +36,7 @@ You will need to download:
 # Running the project
 1. Clone this repo or save it as a zip
 2. Run "npm install"
-3. Add configuration file "firebaseConfig" object to enviroments/enviroment.ts file or use the currently used one.
-- (Links for setting up: https://codinglatte.com/posts/how-to/how-to-setup-firebase-for-angular/ or https://firebase.google.com/docs/web/setup)
+3. Add configuration file "firebaseConfig" object to enviroments/enviroment.ts file or use the currently used one. 
+3.1. (Links for helping with setting up: https://codinglatte.com/posts/how-to/how-to-setup-firebase-for-angular/ or https://firebase.google.com/docs/web/setup)
 4. Run "ng s"
 5. Open http://localhost:4200 and use the app
