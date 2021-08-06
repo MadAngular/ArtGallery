@@ -28,7 +28,6 @@ Authorized (Logged in) users:
 - Npm - Package manager
 - Firebase - NoSQL database used to store data online
 - Visual Studio Code - IDE
-
 You will need have installed before starting the project:
 - NodeJS
 - Angular CLI
