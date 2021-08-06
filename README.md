@@ -1,5 +1,6 @@
 # ArtGallery
 ArtGallery "WaveArts" is a project created for the project defense for the Agnular Softuni Course as part of the JS Web Program (https://softuni.bg/trainings/3473/angular-july-2021)
+
 Project Requirements: [Angular Project Assignment.docx](https://github.com/TheStormWeaver/ArtGallery/files/6945894/Angular.Project.Assignment.docx)
 
 ## About project
