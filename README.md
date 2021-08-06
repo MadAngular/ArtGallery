@@ -29,8 +29,8 @@ Authorized (Logged in) users:
 - Firebase - NoSQL database used to store data online
 - Visual Studio Code - IDE
 
-You will need to download:
-- NodeJS (LTS version)
+You will need have before starting the project:
+- NodeJS
 - Angular CLI
 
 # Running the project
