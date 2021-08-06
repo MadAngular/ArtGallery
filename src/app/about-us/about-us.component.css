@@ -1,0 +1,12 @@
+.bg-light:first-child {
+  background-image: url("/assets/colors.jpg");
+}
+
+.bg-light:nth-child(2) {
+  background-image: url("/assets/sroloc.jpg");
+}
+
+.wave {
+  margin-left: 80px;
+  margin-top: 20px;
+}

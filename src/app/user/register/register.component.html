@@ -1,0 +1,95 @@
+<div class="container-fluid ps-md-0">
+  <div class="row g-0">
+    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+    <div class="col-md-8 col-lg-6">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+              <h3 class="login-heading mb-4">Register</h3>
+
+              <!-- Sign In Form -->
+              <form (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+                <div class="form-floating mb-3">
+                  <input
+                    class="form-control"
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="name@example.com"
+                    required
+                    formControlName="email"
+                  />
+                  <label for="email">Email address</label>
+                </div>
+
+                <div *ngIf="form.email.errors != null">
+                  <div *ngIf="form.email.errors.required && form.email.touched">
+                    <p class="text-danger">Email is required!</p>
+                  </div>
+                  <div *ngIf="form.email.errors.email && form.email.touched">
+                    <p class="text-danger">Invalid Email!</p>
+                  </div>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input
+                    class="form-control"
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Password"
+                    required=""
+                    formControlName="password"
+                  />
+                  <label for="password">Password</label>
+                </div>
+
+                <div *ngIf="form.password.errors != null">
+                  <div *ngIf="!form.password.errors?.minlength?.actuallength && form.password.touched">
+                    <p>{{ this.form.password.errors?.minlength?.actuallength }}</p>
+                    <p class="text-danger font-weight-bold">
+                      Password must be at least 6 characters!
+                    </p>
+                  </div>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input
+                    class="form-control"
+                    type="password"
+                    id="repassword"
+                    name="repassword"
+                    placeholder="Repeat Password"
+                    required=""
+                    formControlName="repassword"
+                  />
+                  <label for="repeatPassword">Repeat Password</label>
+                </div>
+
+                <div *ngIf="form.repassword.errors != null">
+                <div *ngIf="form.repassword.value !== form.password.value && form.repassword.touched">
+                <p class="text-danger">Passwords does not match!</p>
+              </div>
+            </div>
+
+                <div class="d-grid">
+                  <button
+                    class="
+                      btn btn-lg btn-primary btn-login
+                      fw-bold
+                      mb-2
+                    "
+                    type="submit"
+                  >
+                    Register
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
