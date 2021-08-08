@@ -5,7 +5,7 @@ import { AngularFirestoreDocument } from "@angular/fire/firestore/document/docum
 import { Router } from "@angular/router";
 import { ToastrService } from "ngx-toastr";
 import { User } from "../models/User";
-import { UserInfo } from "../models/UserInfo";
+import { UserData } from "../models/UserData";
 
 @Injectable({
   providedIn: "root",
@@ -52,7 +52,7 @@ export class AuthService {
   }
 
   get GetUserPhoto() {
-    return this.firestore.collection<UserInfo>("userInfo").doc(this.GetUserId);
+    return this.firestore.collection<UserData>("userData").doc(this.GetUserId);
   }
 
   Register(email: string, password: string) {
@@ -62,11 +62,11 @@ export class AuthService {
         this.toastr.success("Sign up successful!");
         this.SetUserData(result.user);
         this.firestore
-          .collection<UserInfo>("userInfo")
+          .collection<UserData>("userData")
           .doc(result.user.uid)
           .set({ photoURL: "" })
           .then(() => {
-            this.router.navigate(["home"]);
+            this.router.navigate(["/"]);
           });
       })
       .catch((error) => {
@@ -111,13 +111,13 @@ export class AuthService {
   }
 
   SetUserPhoto(photoUrl: any) {
-    let newPhoto: UserInfo = {
+    let newPhoto: UserData = {
       photoUrl: photoUrl,
     };
 
     this.toastr.info("Updating picture...");
     return this.firestore
-      .collection<UserInfo>("userInfo")
+      .collection<UserData>("userData")
       .doc(this.GetUserId)
       .set(newPhoto)
       .then(() => {
