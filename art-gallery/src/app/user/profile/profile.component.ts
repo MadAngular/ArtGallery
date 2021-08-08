@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
-import { ToastrService } from "ngx-toastr";
 import { Observable } from "rxjs";
 import { AuthService } from "../../services-and-guards/auth.service";
 
@@ -43,17 +42,6 @@ export class ProfileComponent implements OnInit {
     });
   }
 
-  toggleEdit() {
-    this.editingMode = !this.editingMode;
-  }
-
-  onSubmit() {
-    this.authService.SetUserPhoto(this.form.picture.value).then(() => {
-      this.photo = this.form.picture.value;
-      this.editingMode = false;
-    });
-  }
-
   get form() {
     return this.profilePicForm.controls;
   }
@@ -64,5 +52,16 @@ export class ProfileComponent implements OnInit {
 
   get email() {
     return this.authService.GetUserEmail;
+  }
+
+  toggleEdit() {
+    this.editingMode = !this.editingMode;
+  }
+
+  onSubmit() {
+    this.authService.SetUserPhoto(this.form.picture.value).then(() => {
+      this.photo = this.form.picture.value;
+      this.editingMode = false;
+    });
   }
 }

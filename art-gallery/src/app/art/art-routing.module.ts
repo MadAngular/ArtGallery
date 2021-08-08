@@ -1,35 +1,35 @@
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from "@angular/router";
 
 //components
-import { CollectionArtComponent } from './collection-art/collection-art.component';
-import { CreateArtComponent } from './create-art/create-art.component';
-import { DetailsArtComponent } from './details-art/details-art.component';
-import { EditArtComponent } from './edit-art/edit-art.component';
+import { CollectionArtComponent } from "./collection-art/collection-art.component";
+import { CreateArtComponent } from "./create-art/create-art.component";
+import { DetailsArtComponent } from "./details-art/details-art.component";
+import { EditArtComponent } from "./edit-art/edit-art.component";
 
 // guards
-import { AuthGuard } from '../services-and-guards/auth.guard';
+import { AuthGuard } from "../services-and-guards/auth.guard";
 
 const routes: Routes = [
   {
-    path: 'art',
+    path: "art",
     component: CollectionArtComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
   {
-    path: 'art/create',
+    path: "art/create",
     component: CreateArtComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
   {
-    path: 'art/details/:id',
+    path: "art/details/:id",
     component: DetailsArtComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthGuard],
   },
-    {
-    path: 'art/edit/:id',
+  {
+    path: "art/edit/:id",
     component: EditArtComponent,
-    canActivate: [AuthGuard]
-  }
-]
+    canActivate: [AuthGuard],
+  },
+];
 
 export const ArtRoutingModule = RouterModule.forChild(routes);

@@ -37,7 +37,7 @@ export class RegisterComponent implements OnInit {
   get form() {
     return this.registerForm.controls;
   }
-  
+
   onSubmit() {
     this.authService
       .Register(this.form.email.value, this.form.password.value)
