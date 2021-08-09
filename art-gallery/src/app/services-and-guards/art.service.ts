@@ -32,13 +32,14 @@ export class ArtService {
     return this.ArtCollection.doc(id).get();
   }
 
-  addArt(title: string, description: string, imageUrl: string) {
+  addArt(title: string, description: string, imageUrl: string, author: string) {
     let art: Art = {
       creatorId: this.authService.GetUserId,
       title: title,
       description: description,
       imageURL: imageUrl,
       likes: 0,
+      author: author
     };
     let id = uuidv4();
     return this.ArtCollection.doc(id).set(art);
@@ -56,5 +57,48 @@ export class ArtService {
         this.toastr.success("Art piece deleted!");
         this.router.navigate(["art"]);
       });
+  }
+
+  LikesColl(artId: string) {
+    return this.firestore
+      .collection("likes")
+      .ref.where("ArtId", "==", artId)
+      .get();
+  }
+
+  IsUserLikedArtById(artId: string) {
+    return this.LikesCollection.where("ArtId", "==", artId).get();
+  }
+
+  addLike(like: Like) {
+    let id = uuidv4();
+    return this.LikesCollection.doc(id).set(like);
+  }
+
+  likeArt(artId: string, art: Art) {
+    let like: Like = {
+      UserId: this.authService.GetUserId,
+      ArtId: artId,
+    };
+
+    this.IsUserLikedArtById(artId).then((data) => {
+      let arr = data.docs.filter(
+        (x) => x.data().UserId == this.authService.GetUserId
+      );
+      if (arr.length > 0) {
+        this.toastr.error("You already liked this art piece!");
+        return;
+      }
+      art.likes += 1;
+
+      this.addLike(like)
+        .then(() => {
+          this.toastr.success("You liked this art piece");
+        })
+        .catch((err) => {
+          this.toastr.error("Something went wrong while liking the art piece!");
+        });
+      this.editArt(art, artId);
+    });
   }
 }

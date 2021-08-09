@@ -25,10 +25,10 @@
 
                 <div *ngIf="form.email.errors != null">
                   <div *ngIf="form.email.errors.required && form.email.touched">
-                    <p class="text-danger">Email is required!</p>
+                    <p class="text-danger">An email adress is required!</p>
                   </div>
                   <div *ngIf="form.email.errors.email && form.email.touched">
-                    <p class="text-danger">Invalid Email!</p>
+                    <p class="text-danger">This email is invalid!</p>
                   </div>
                 </div>
 
@@ -53,7 +53,7 @@
                     <div *ngIf="!form.password.errors?.minlength?.actuallength && form.password.touched">
                       <p>{{ this.form.password.errors?.minlength?.actuallength }}</p>
                       <p class="text-danger font-weight-bold">
-                        Password must be minimum 6 characters long!
+                        Password must be at least 6 characters!
                       </p>
                     </div>
                   </div>

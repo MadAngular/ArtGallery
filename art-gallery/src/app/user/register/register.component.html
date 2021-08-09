@@ -25,10 +25,10 @@
 
                 <div *ngIf="form.email.errors != null">
                   <div *ngIf="form.email.errors.required && form.email.touched">
-                    <p class="text-danger">Email is required!</p>
+                    <p class="text-danger">An email adress is required!</p>
                   </div>
                   <div *ngIf="form.email.errors.email && form.email.touched">
-                    <p class="text-danger">Invalid Email!</p>
+                    <p class="text-danger">This email is invalid!</p>
                   </div>
                 </div>
 
@@ -69,7 +69,7 @@
 
                 <div *ngIf="form.repassword.errors != null">
                 <div *ngIf="form.repassword.value !== form.password.value && form.repassword.touched">
-                <p class="text-danger">Passwords does not match!</p>
+                <p class="text-danger">Passwords do not match!</p>
               </div>
             </div>
 

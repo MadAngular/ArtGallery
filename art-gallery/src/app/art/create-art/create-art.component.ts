@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { ToastrService } from "ngx-toastr";
 import { ArtService } from "src/app/services-and-guards/art.service";
+import { AuthService } from "src/app/services-and-guards/auth.service";
 
 @Component({
   selector: "app-create-art",
@@ -14,6 +15,7 @@ export class CreateArtComponent {
 
   constructor(
     private artService: ArtService,
+    private authService: AuthService,
     private fBuilder: FormBuilder,
     private toastr: ToastrService,
     private router: Router
@@ -34,9 +36,10 @@ export class CreateArtComponent {
       .addArt(
         this.form.title.value,
         this.form.description.value,
-        this.form.imageURL.value
+        this.form.imageURL.value,
+        this.authService.GetUserUsernameByEmail
       )
-      .then((data) => {
+      .then(() => {
         this.toastr.success("Art piece added!");
         this.createForm.reset();
         this.router.navigate(["/"])
