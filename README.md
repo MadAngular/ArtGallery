@@ -31,7 +31,7 @@ Authorized (Logged in) users:
 
 You will need have installed before starting the project:
 - NodeJS
-- Angular CLI
+- Angular CLI (8.2.23 preferably)
 
 # Running the project
 1. Clone this repo or save it as a zip
