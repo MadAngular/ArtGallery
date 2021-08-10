@@ -30,8 +30,8 @@ Authorized (Logged in) users:
 - Visual Studio Code - IDE
 
 You will need have installed before starting the project:
-- NodeJS
-- Angular CLI (8.2.23 preferably)
+- NodeJS (14.17.3 is used in this project)
+- Angular CLI (8.2.23 is used in this project)
 
 # Running the project
 1. Clone this repo or save it as a zip
