@@ -1,1 +1,36 @@
-/* */
+.some {
+  margin-bottom: 2em;
+  max-width: 90%;
+  text-align: center;
+}
+
+.details-img {
+  width: 40%;
+  height: auto;
+  margin: 0 auto;
+  transform: none;
+  border: 1px solid black;
+}
+
+.desc {
+  margin: 2%;
+  display: inline-block;
+  width: 40%;
+  vertical-align: top;
+  color: black;
+}
+
+.det-img {
+  margin: 1em;
+  width: 30%;
+  transform: none;
+  border: 1px solid black;
+}
+
+.des {
+  font-weight:normal
+}
+
+.btn {
+  margin: 10px
+}

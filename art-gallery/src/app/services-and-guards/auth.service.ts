@@ -47,8 +47,8 @@ export class AuthService {
 
   get GetUserUsernameByEmail() {
     let user = JSON.parse(localStorage.getItem("user"));
-    let res = user.email.split("@")[0];
-    return res;
+    let result = user.email.split("@")[0];
+    return result;
   }
 
   get GetUserPhoto() {

@@ -1,1 +1,19 @@
-<p>details-art works!</p>
+<div class="container home some" *ngIf="isArtExisting">
+  <h2 class="display-5 title">{{ artModel.title }}</h2>
+  <h4 class="des">Artist: {{ artModel.author }}</h4>
+  <img class="det-img" src="{{ artModel.imageURL }}" />
+  <p class="art-description">{{ artModel.description }}</p>
+  <p class="likes">Likes: {{ artModel.likes }}</p>
+
+  <hr class="line" />
+  <div>
+    <div *ngIf="IsUserAuthor(artModel.creatorId)" class="text-center m-0">
+      <a class="btn btn-warning col-1" [routerLink]="editLink">Edit</a>
+      <a class="btn btn-danger  col-1" (click)="deleteArt()">Delete</a>
+    </div>
+
+    <div *ngIf="!IsUserAuthor(artModel.creatorId)" class="text-center m-0">
+      <a class="btn btn-info col-1" (click)="likeArt(artModel)">Like</a>
+    </div>
+  </div>
+</div>
