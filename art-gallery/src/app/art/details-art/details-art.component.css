@@ -1,36 +1,62 @@
 .some {
-  margin-bottom: 2em;
-  max-width: 90%;
+  max-width: 100%;
   text-align: center;
 }
 
-.details-img {
-  width: 40%;
-  height: auto;
-  margin: 0 auto;
-  transform: none;
-  border: 1px solid black;
-}
-
-.desc {
-  margin: 2%;
-  display: inline-block;
-  width: 40%;
-  vertical-align: top;
-  color: black;
-}
-
-.det-img {
-  margin: 1em;
-  width: 30%;
-  transform: none;
-  border: 1px solid black;
-}
-
-.des {
-  font-weight:normal
-}
-
 .btn {
-  margin: 10px
+  margin: 10px;
+}
+
+.card {
+  margin-top: 70px;
+  margin-bottom: 70px;
+  background: rgb(255, 255, 255);
+  padding: 5em;
+}
+
+.edit {
+  background: #ffd900;
+  font-weight: bold;
+  color: #fff;
+
+}
+.edit:hover {
+  background: #eeff00;
+  color: #fff;
+}
+
+.delete {
+  background: #ff0022;
+  font-weight: bold;
+  color: #fff;
+}
+
+.delete:hover {
+  background: #ff5b91;
+  color: #fff;
+}
+
+.like {
+  background: #00a2ff;
+  font-weight: bold;
+  color: #fff;
+}
+
+.like:hover {
+  background: #00e1ff;
+  color: #fff;
+}
+
+img {
+  max-width: 100%;
+}
+
+.space {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.part {
+  margin: auto;
 }

@@ -1,0 +1,110 @@
+<div class="piece">
+<div class="container home some" *ngIf="isArtExisting">
+  <div class="container">
+    <div class="card">
+      <div class="container-fliud">
+        <div class="wrapper row">
+          <div class="preview col-md-6">
+            <div class="preview-pic tab-content">
+              <div class="tab-pane active" id="pic-1">
+                <img src="{{ artModel.imageURL }}" />
+              </div>
+            </div>
+          </div>
+          <div class="details col-md-6 part">
+            <h3 class="product-title space">{{ artModel.title }}</h3>
+            <h5 class="product-title space">Artist: {{ artModel.author }}</h5>
+            <p class="product-description space">{{ artModel.description }}</p>
+            <div class="action space">
+              <button class="edit btn btn-default" type="button">Edit</button>
+              <button class="delete btn btn-default" type="button">
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+.some {
+  margin-bottom: 2em;
+  max-width: 90%;
+  text-align: center;
+}
+
+.details-img {
+  width: 40%;
+  height: auto;
+  margin: 0 auto;
+  transform: none;
+  border: 1px solid black;
+}
+
+.desc {
+  margin: 2%;
+  display: inline-block;
+  width: 40%;
+  vertical-align: top;
+  color: black;
+}
+
+.det-img {
+  margin: 1em;
+  width: 30%;
+  transform: none;
+  border: 1px solid black;
+}
+
+.des {
+  font-weight: normal;
+}
+
+.btn {
+  margin: 10px;
+}
+
+.card {
+  margin-top: 70px;
+  margin-bottom: 70px;
+  background: rgb(255, 255, 255);
+  padding: 3em;
+  line-height: 1.5em;
+}
+
+.product-title {
+  margin-top: 0;
+}
+
+.edit,
+.delete {
+  background: #ff9f1a;
+  padding: 1.2em 1.5em;
+  border: none;
+  text-transform: UPPERCASE;
+  font-weight: bold;
+  color: #fff;
+  -webkit-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+}
+.edit:hover,
+.delete:hover {
+  background: #b36800;
+  color: #fff;
+}
+
+img {
+  max-width: 100%;
+}
+
+.space {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.part {
+  margin: auto;
+}

@@ -1,19 +1,40 @@
 <div class="container home some" *ngIf="isArtExisting">
-  <h2 class="display-5 title">{{ artModel.title }}</h2>
-  <h4 class="des">Artist: {{ artModel.author }}</h4>
-  <img class="det-img" src="{{ artModel.imageURL }}" />
-  <p class="art-description">{{ artModel.description }}</p>
-  <p class="likes">Likes: {{ artModel.likes }}</p>
+    <div class="card">
+      <div class="container-fliud">
+        <div class="wrapper row">
+          <div class="preview col-md-6">
+            <div class="preview-pic tab-content">
+              <div class="tab-pane active" id="pic-1">
+                <img src="{{ artModel.imageURL }}" />
+              </div>
+            </div>
+          </div>
+          <div class="details col-md-6 part">
+            <h3 class="product-title space">{{ artModel.title }}</h3>
+            <h5 class="product-title space">Artist: {{ artModel.author }}</h5>
 
-  <hr class="line" />
-  <div>
-    <div *ngIf="IsUserAuthor(artModel.creatorId)" class="text-center m-0">
-      <a class="btn btn-warning col-1" [routerLink]="editLink">Edit</a>
-      <a class="btn btn-danger  col-1" (click)="deleteArt()">Delete</a>
+            <p class="product-description space">
+              {{ artModel.description }}
+            </p>
+            <p class="space">Likes: {{ artModel.likes }}</p>
+            <div class="action space">
+              <div *ngIf="IsUserAuthor(artModel.creatorId)">
+                <button class="edit btn btn-default" type="button" [routerLink]="editLink">Edit</button>
+                <button class="delete btn btn-default" type="button" (click)="deleteArt()">
+                  Delete
+                </button>
+              </div>
+              <div
+                *ngIf="!IsUserAuthor(artModel.creatorId)"
+                class="text-center m-0"
+              >
+                <a class="like btn btn-default" (click)="likeArt(artModel)"
+                  >Like</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div *ngIf="!IsUserAuthor(artModel.creatorId)" class="text-center m-0">
-      <a class="btn btn-info col-1" (click)="likeArt(artModel)">Like</a>
-    </div>
-  </div>
 </div>
