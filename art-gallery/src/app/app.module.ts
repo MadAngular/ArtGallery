@@ -7,8 +7,7 @@ import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
 import { AboutUsComponent } from "./about-us/about-us.component";
 
-// firebase imports and modules
-
+// Modules and firebase imports
 import { environment } from "src/environments/environment";
 import { AngularFireModule } from "@angular/fire";
 import { AngularFireDatabaseModule } from "@angular/fire/database";
@@ -38,11 +37,9 @@ import { AuthService } from "./services-and-guards/auth.service";
     CoreModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
+      maxOpened: 1,
+      timeOut: 2000,
       autoDismiss: true,
-      maxOpened: 2,
-      timeOut: 1500,
-      easeTime: 200,
-      newestOnTop: false,
     }),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,

@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { AuthService } from "../../services-and-guards/auth.service";
@@ -8,13 +8,11 @@ import { AuthService } from "../../services-and-guards/auth.service";
   templateUrl: "./login.component.html",
   styleUrls: ["./login.component.css"],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   loginForm: FormGroup;
-  returnUrl: string;
 
   constructor(
     public authService: AuthService,
-    private activeRoute: ActivatedRoute,
     private router: Router,
     private fBuilder: FormBuilder
   ) {
@@ -28,10 +26,6 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
-    this.returnUrl = this.activeRoute.snapshot.queryParams.returnUrl || "/";
-  }
-
   get form() {
     return this.loginForm.controls;
   }
@@ -40,7 +34,6 @@ export class LoginComponent implements OnInit {
     this.authService.Login(
       this.form.email.value,
       this.form.password.value,
-      this.returnUrl
     );
   }
 }

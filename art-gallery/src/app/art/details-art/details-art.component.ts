@@ -11,7 +11,7 @@ import { AuthService } from "src/app/services-and-guards/auth.service";
   styleUrls: ["./details-art.component.css"],
 })
 export class DetailsArtComponent implements OnInit {
-  artModel: any;
+  art: any;
   editLink: string;
   isArtExisting: boolean = false;
 
@@ -34,7 +34,7 @@ export class DetailsArtComponent implements OnInit {
       }
 
       this.editLink = "/art/edit/" + this.route.snapshot.params.id;
-      this.artModel = data.data();
+      this.art = data.data();
       this.isArtExisting = true;
       this.toastr.success("Art loaded.");
     });

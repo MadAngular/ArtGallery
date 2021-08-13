@@ -1,34 +1,34 @@
-<div class="container home some" *ngIf="isArtExisting">
+<div class="container home base" *ngIf="isArtExisting">
     <div class="card">
       <div class="container-fliud">
         <div class="wrapper row">
           <div class="preview col-md-6">
             <div class="preview-pic tab-content">
               <div class="tab-pane active" id="pic-1">
-                <img src="{{ artModel.imageURL }}" />
+                <img src="{{ art.imageURL }}" />
               </div>
             </div>
           </div>
           <div class="details col-md-6 part">
-            <h3 class="product-title space">{{ artModel.title }}</h3>
-            <h5 class="product-title space">Artist: {{ artModel.author }}</h5>
+            <h3 class="product-title space">{{ art.title }}</h3>
+            <h5 class="product-title space">Artist: {{ art.author }}</h5>
 
             <p class="product-description space">
-              {{ artModel.description }}
+              {{ art.description }}
             </p>
-            <p class="space">Likes: {{ artModel.likes }}</p>
+            <p class="space">Likes: {{ art.likes }}</p>
             <div class="action space">
-              <div *ngIf="IsUserAuthor(artModel.creatorId)">
+              <div *ngIf="IsUserAuthor(art.creatorId)">
                 <button class="edit btn btn-default" type="button" [routerLink]="editLink">Edit</button>
                 <button class="delete btn btn-default" type="button" (click)="deleteArt()">
                   Delete
                 </button>
               </div>
               <div
-                *ngIf="!IsUserAuthor(artModel.creatorId)"
+                *ngIf="!IsUserAuthor(art.creatorId)"
                 class="text-center m-0"
               >
-                <a class="like btn btn-default" (click)="likeArt(artModel)"
+                <a class="like btn btn-default" (click)="likeArt(art)"
                   >Like</a
                 >
               </div>

@@ -59,7 +59,7 @@ export class AuthService {
     return this.fireAuth
       .createUserWithEmailAndPassword(email, password)
       .then((result) => {
-        this.toastr.success("Sign up successful!");
+        this.toastr.success("User registered successfully!");
         this.SetUserData(result.user);
         this.firestore
           .collection<UserData>("userData")
@@ -74,13 +74,13 @@ export class AuthService {
       });
   }
 
-  Login(email: string, password: string, returnUrl: string) {
+  Login(email: string, password: string) {
     return this.fireAuth
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
-        this.toastr.success("Login Successful!");
+        this.toastr.success("Logged in user successfully!");
         this.userData = result.user;
-        this.router.navigateByUrl(returnUrl);
+        this.router.navigate(["/"]);
       })
       .catch((error) => {
         this.toastr.error(error.message);
@@ -91,7 +91,7 @@ export class AuthService {
     return this.fireAuth.signOut().then(() => {
       localStorage.removeItem("user");
       this.router.navigate(["/"]);
-      this.toastr.info("Logged out!");
+      this.toastr.info("Logged out user successfully!");
     });
   }
 
@@ -115,13 +115,13 @@ export class AuthService {
       photoUrl: photoUrl,
     };
 
-    this.toastr.info("Updating picture...");
+    this.toastr.info("Updating profile picture. Plase stand by...");
     return this.firestore
       .collection<UserData>("userData")
       .doc(this.GetUserId)
       .set(newPhoto)
       .then(() => {
-        this.toastr.success("Picture updated!");
+        this.toastr.success("Profile picture updated!");
       });
   }
 }

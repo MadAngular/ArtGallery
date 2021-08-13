@@ -1,1 +1,134 @@
-<p>edit-art works!</p>
+<section
+  class="vh-100 bg-image"
+  style="background-image: url('/assets/PurpleGradient.jpg')"
+>
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px">
+            <div class="card-body p-5">
+              <h2 class="text-center mb-5">Art Editing</h2>
+
+              <form (ngSubmit)="onSubmit()" [formGroup]="editForm">
+                <div class="form-outline mb-4">
+                  <input
+                    type="text"
+                    id="title"
+                    name="title"
+                    placeholder="Art Imagery"
+                    class="form-control form-control-lg"
+                    required
+                    minlength="3"
+                    formControlName="title"
+                    (value)="(art.title)"
+                  />
+                  <label class="form-label" for="title">Title</label>
+
+                  <div *ngIf="this.editForm.controls.title.errors != null">
+                    <div
+                      *ngIf="
+                        this.editForm.controls.title.errors?.required &&
+                        this.editForm.controls.title.touched
+                      "
+                    >
+                      <p class="text-danger">Title is required!</p>
+                    </div>
+                    <div
+                      *ngIf="
+                        this.editForm.controls.title.errors?.minlength
+                          ?.actuallength !== 3 &&
+                        this.editForm.controls.title.touched
+                      "
+                    >
+                      <p class="text-danger">
+                        The Title must be at least 3 charachters long!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <textarea
+                    type="text"
+                    id="description"
+                    name="description"
+                    placeholder="This is a very descriptive piece"
+                    class="form-control form-control-lg"
+                    required
+                    minlength="6"
+                    formControlName="description"
+                    (value)="(art.description)"
+                  ></textarea>
+                  <label class="form-label" for="description"
+                    >Description</label
+                  >
+                  <div
+                    *ngIf="this.editForm.controls.description.errors != null"
+                  >
+                    <div
+                      *ngIf="
+                        this.editForm.controls.description.errors?.required &&
+                        this.editForm.controls.description.touched
+                      "
+                    >
+                      <p class="text-danger">Description is required!</p>
+                    </div>
+                    <div
+                      *ngIf="
+                        this.editForm.controls.description.errors?.minlength
+                          ?.actuallength !== 6 &&
+                        this.editForm.controls.description.touched
+                      "
+                    >
+                      <p class="text-danger">
+                        The Description must be at least 6 charachters long!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <input
+                    type="text"
+                    id="imageURL"
+                    name="imageURL"
+                    placeholder="https://images.unsplash.com/...."
+                    class="form-control form-control-lg"
+                    formControlName="imageURL"
+                    required
+                    (value)="(art.imageURL)"
+                  />
+                  <label class="form-label" for="imageURL">imageURL</label>
+
+                  <div
+                    *ngIf="
+                      this.editForm.controls.imageURL.errors?.required &&
+                      this.editForm.controls.imageURL.touched
+                    "
+                  >
+                    <p class="text-danger">ImageURL is required!</p>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <button
+                    type="submit"
+                    [disabled]="this.editForm.invalid"
+                    class="
+                      btn btn-success btn-block btn-lg
+                      gradient-custom-4
+                      text-body
+                    "
+                  >
+                    Update art piece
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

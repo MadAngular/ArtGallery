@@ -42,7 +42,7 @@ export class CreateArtComponent {
       .then(() => {
         this.toastr.success("Art piece added!");
         this.createForm.reset();
-        this.router.navigate(["/"])
+        this.router.navigate(["/art"])
       })
       .catch((err) => {
         this.toastr.error(err.message);
