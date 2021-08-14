@@ -29,7 +29,7 @@ Authorized (Logged in) users:
 - Firebase - NoSQL database used to store data online
 - Visual Studio Code - IDE
 
-You will need have installed before starting the project:
+You will also need to install these before starting the project:
 - NodeJS (14.17.3 is used in this project)
 - Angular CLI (8.2.23 is used in this project)
 
