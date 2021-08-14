@@ -39,16 +39,27 @@
                     id="password"
                     name="password"
                     placeholder="Password"
-                    required=""
+                    required
                     formControlName="password"
                   />
                   <label for="password">Password</label>
                 </div>
 
                 <div *ngIf="form.password.errors != null">
-                  <div *ngIf="!form.password.errors?.minlength?.actuallength && form.password.touched">
-                    <p>{{ this.form.password.errors?.minlength?.actuallength }}</p>
-                    <p class="text-danger font-weight-bold">
+                  <div
+                    *ngIf="
+                      form.password.errors?.required && form.password.touched
+                    "
+                  >
+                    <p class="text-danger">A password is required!</p>
+                  </div>
+                  <div
+                    *ngIf="
+                      !form.password.errors?.minlength?.actuallength &&
+                      form.password.touched
+                    "
+                  >
+                    <p class="text-danger">
                       Password must be at least 6 characters!
                     </p>
                   </div>
@@ -61,25 +72,26 @@
                     id="repassword"
                     name="repassword"
                     placeholder="Repeat Password"
-                    required=""
+                    required
                     formControlName="repassword"
                   />
                   <label for="repeatPassword">Repeat Password</label>
                 </div>
 
                 <div *ngIf="form.repassword.errors != null">
-                <div *ngIf="form.repassword.value !== form.password.value && form.repassword.touched">
-                <p class="text-danger">Passwords do not match!</p>
-              </div>
-            </div>
+                  <div
+                    *ngIf="
+                      form.repassword.value !== form.password.value &&
+                      form.repassword.touched
+                    "
+                  >
+                    <p class="text-danger">Passwords do not match!</p>
+                  </div>
+                </div>
 
                 <div class="d-grid">
                   <button
-                    class="
-                      btn btn-lg btn-primary btn-login
-                      fw-bold
-                      mb-2
-                    "
+                    class="btn btn-lg btn-primary btn-login fw-bold mb-2"
                     type="submit"
                   >
                     Register

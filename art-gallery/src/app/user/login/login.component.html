@@ -1,4 +1,3 @@
-  
 <div class="container-fluid">
   <div class="row no-gutter">
     <div class="col-md-6 d-none d-md-flex bg-image"></div>
@@ -44,29 +43,35 @@
                       border-0
                       shadow-sm
                       px-4
-                      text-primary"
-                    required=""
+                      text-primary
+                    "
+                    required
                     formControlName="password"
                   />
 
                   <div *ngIf="form.password.errors != null">
-                    <div *ngIf="!form.password.errors?.minlength?.actuallength && form.password.touched">
-                      <p>{{ this.form.password.errors?.minlength?.actuallength }}</p>
-                      <p class="text-danger font-weight-bold">
+                    <div
+                      *ngIf="
+                        form.password.errors?.required && form.password.touched
+                      "
+                    >
+                      <p class="text-danger">A password is required!</p>
+                    </div>
+                    <div
+                      *ngIf="
+                        !form.password.errors?.minlength?.actuallength &&
+                        form.password.touched
+                      "
+                    >
+                      <p class="text-danger">
                         Password must be at least 6 characters!
                       </p>
                     </div>
                   </div>
-
                 </div>
                 <button
                   type="submit"
-                  class="
-                    btn btn-primary btn-block
-                    mb-2
-                    rounded-pill
-                    shadow-sm
-                  "
+                  class="btn btn-primary btn-block mb-2 rounded-pill shadow-sm"
                 >
                   Login
                 </button>

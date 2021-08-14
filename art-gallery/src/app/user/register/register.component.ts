@@ -1,6 +1,6 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { ActivatedRoute, Router } from "@angular/router";
+import { Router } from "@angular/router";
 import { AuthService } from "../../services-and-guards/auth.service";
 
 @Component({
@@ -8,14 +8,11 @@ import { AuthService } from "../../services-and-guards/auth.service";
   templateUrl: "./register.component.html",
   styleUrls: ["./register.component.css"],
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
   registerForm: FormGroup;
-
-  returnUrl: string;
 
   constructor(
     public authService: AuthService,
-    private activeRoute: ActivatedRoute,
     private router: Router,
     private fBuilder: FormBuilder
   ) {
@@ -26,12 +23,8 @@ export class RegisterComponent implements OnInit {
     });
 
     if (this.authService.isLoggedIn) {
-      this.router.navigate(["home"]);
+      this.router.navigate(["/"]);
     }
-  }
-
-  ngOnInit() {
-    this.returnUrl = this.activeRoute.snapshot.queryParams.returnUrl || "/";
   }
 
   get form() {
