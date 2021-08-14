@@ -5,3 +5,21 @@ img {
 li a {
   margin-right: 30px;
 }
+
+.gradient {
+  background: #000000;
+
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(2, 0, 131, 0.6),
+    rgba(53, 0, 109, 0.6),
+    rgba(2, 0, 26, 0.6)
+  );
+
+  background: linear-gradient(
+    to right,
+    rgba(2, 0, 131, 0.6),
+    rgba(53, 0, 109, 0.6),
+    rgba(2, 0, 26, 0.6)
+  );
+}
