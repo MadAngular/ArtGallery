@@ -22,7 +22,7 @@ export class DetailsArtComponent implements OnInit {
     private toastr: ToastrService,
     private router: Router
   ) {
-    this.toastr.info("Loading art");
+    this.toastr.info("Loading art...");
 
     this.artService.LikesColl(this.route.snapshot.params.id);
   }
@@ -41,8 +41,8 @@ export class DetailsArtComponent implements OnInit {
   }
 
   IsUserAuthor(userId: any): boolean {
-    let res = this.authService.GetUserId;
-    return res == userId;
+    let currentId = this.authService.GetUserId;
+    return currentId == userId;
   }
 
   likeArt(art: Art) {

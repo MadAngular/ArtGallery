@@ -59,7 +59,7 @@ export class EditArtComponent {
         this.router.navigate([`/art/details/${this.route.snapshot.params.id}`]);
       })
       .catch((err) => {
-        console.log(err);
+        this.toastr.error(err.message);
       });
   }
 }

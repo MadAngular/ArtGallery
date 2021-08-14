@@ -26,15 +26,20 @@
 
                   <div *ngIf="this.createForm.controls.title.errors != null">
                     <div
-                    *ngIf="this.createForm.controls.title.errors?.required &&
-                      this.createForm.controls.title.touched">
-                    <p class="text-danger">
-                      Title is required!
-                    </p>
-                  </div>
+                      *ngIf="
+                        this.createForm.controls.title.errors?.required &&
+                        this.createForm.controls.title.touched
+                      "
+                    >
+                      <p class="text-danger">Title is required!</p>
+                    </div>
                     <div
-                      *ngIf="this.createForm.controls.title.errors?.minlength ?.actuallength !== 3 &&
-                        this.createForm.controls.title.touched">
+                      *ngIf="
+                        this.createForm.controls.title.errors?.minlength
+                          ?.actuallength !== 3 &&
+                        this.createForm.controls.title.touched
+                      "
+                    >
                       <p class="text-danger">
                         The Title must be at least 3 charachters long!
                       </p>
@@ -56,17 +61,24 @@
                   <label class="form-label" for="description"
                     >Description</label
                   >
-                  <div *ngIf="this.createForm.controls.description.errors != null">
+                  <div
+                    *ngIf="this.createForm.controls.description.errors != null"
+                  >
                     <div
-                    *ngIf=" this.createForm.controls.description.errors?.required&&
-                      this.createForm.controls.description.touched">
-                    <p class="text-danger">
-                      Description is required!
-                    </p>
-                  </div>
+                      *ngIf="
+                        this.createForm.controls.description.errors?.required &&
+                        this.createForm.controls.description.touched
+                      "
+                    >
+                      <p class="text-danger">Description is required!</p>
+                    </div>
                     <div
-                      *ngIf=" this.createForm.controls.description.errors?.minlength ?.actuallength !== 6 &&
-                        this.createForm.controls.description.touched">
+                      *ngIf="
+                        this.createForm.controls.description.errors?.minlength
+                          ?.actuallength !== 6 &&
+                        this.createForm.controls.description.touched
+                      "
+                    >
                       <p class="text-danger">
                         The Description must be at least 6 charachters long!
                       </p>
@@ -87,11 +99,13 @@
                   <label class="form-label" for="imageURL">imageURL</label>
 
                   <div
-                  *ngIf="this.createForm.controls.imageURL.errors?.required &&
-                    this.createForm.controls.imageURL.touched"
-                >
-                  <p class="text-danger">ImageURL is required!</p>
-                 </div>
+                    *ngIf="
+                      this.createForm.controls.imageURL.errors?.required &&
+                      this.createForm.controls.imageURL.touched
+                    "
+                  >
+                    <p class="text-danger">ImageURL is required!</p>
+                  </div>
                 </div>
 
                 <div class="d-flex justify-content-center">
@@ -101,8 +115,9 @@
                     class="
                       btn btn-success btn-block btn-lg
                       gradient-custom-4
-                      text-body"
-                      >
+                      text-body
+                    "
+                  >
                     Create art piece
                   </button>
                 </div>
