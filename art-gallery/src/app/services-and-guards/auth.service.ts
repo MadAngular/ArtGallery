@@ -59,8 +59,8 @@ export class AuthService {
     return this.fireAuth
       .createUserWithEmailAndPassword(email, password)
       .then((result) => {
-        this.toastr.success("User registered successfully!");
         this.SetUserData(result.user);
+        this.toastr.success("User registered successfully!");
         this.firestore
           .collection<UserData>("userData")
           .doc(result.user.uid)
@@ -78,8 +78,8 @@ export class AuthService {
     return this.fireAuth
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
-        this.toastr.success("Logged in user successfully!");
         this.userData = result.user;
+        this.toastr.success("Logged in user successfully!");
         this.router.navigate(["/"]);
       })
       .catch((error) => {

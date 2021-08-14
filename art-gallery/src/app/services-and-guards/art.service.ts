@@ -13,7 +13,7 @@ import { v4 as uuidv4 } from "uuid";
 export class ArtService {
   ArtCollection: CollectionReference;
   LikesCollection: CollectionReference;
-  collLen = 0;
+
   constructor(
     private firestore: AngularFirestore,
     public authService: AuthService,
@@ -39,7 +39,7 @@ export class ArtService {
       description: description,
       imageURL: imageUrl,
       likes: 0,
-      author: author
+      author: author,
     };
     let id = uuidv4();
     return this.ArtCollection.doc(id).set(art);
@@ -53,9 +53,9 @@ export class ArtService {
     this.toastr.warning("Deleting art piece...");
     this.ArtCollection.doc(id)
       .delete()
-      .then((data) => {
+      .then(() => {
         this.toastr.success("Art piece deleted!");
-        this.router.navigate(["art"]);
+        this.router.navigate(["/art"]);
       });
   }
 
@@ -97,6 +97,7 @@ export class ArtService {
         })
         .catch((err) => {
           this.toastr.error("Something went wrong while liking the art piece!");
+          this.toastr.error(err.message);
         });
       this.editArt(art, artId);
     });
