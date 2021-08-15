@@ -22,7 +22,7 @@ Authorized (Logged in) users:
 - Can access their own profile page
 - Can edit their profile 
 
-# The project is built with :
+# Project requirements :
 - Angular 8 - Front-end framework
 - Node.js - JavaScript runtime environment
 - Npm - Package manager
