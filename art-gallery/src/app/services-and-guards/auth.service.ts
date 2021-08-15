@@ -4,8 +4,8 @@ import { AngularFirestore } from "@angular/fire/firestore";
 import { AngularFirestoreDocument } from "@angular/fire/firestore/document/document";
 import { Router } from "@angular/router";
 import { ToastrService } from "ngx-toastr";
-import { User } from "../models/User";
-import { UserData } from "../models/UserData";
+import { User } from "../interfaces/User";
+import { UserData } from "../interfaces/UserData";
 
 @Injectable({
   providedIn: "root",

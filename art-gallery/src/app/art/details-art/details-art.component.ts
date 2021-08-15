@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { ToastrService } from "ngx-toastr";
-import { Art } from "src/app/models/Art";
+import { Art } from "src/app/interfaces/Art";
 import { ArtService } from "src/app/services-and-guards/art.service";
 import { AuthService } from "src/app/services-and-guards/auth.service";
 

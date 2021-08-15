@@ -2,8 +2,8 @@ import { Injectable } from "@angular/core";
 import { AngularFirestore, CollectionReference } from "@angular/fire/firestore";
 import { Router } from "@angular/router";
 import { ToastrService } from "ngx-toastr";
-import { Art } from "../models/Art";
-import { Like } from "../models/Like";
+import { Art } from "../interfaces/Art";
+import { Like } from "../interfaces/Like";
 import { AuthService } from "./auth.service";
 import { v4 as uuidv4 } from "uuid";
 
