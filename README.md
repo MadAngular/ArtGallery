@@ -37,6 +37,6 @@ Authorized (Logged in) users:
 1. Clone this repo or save it as a zip
 2. Run "npm install"
 3. Check if the Angular Cli version matches (Note: The used version for the project is 8.3.23 and if you are using a newer version the code might not function correctly)
-4. Add configuration file "firebaseConfig" object to enviroments/enviroment.ts file or keep the currently used one. (Links for helping with the setup: https://codinglatte.com/posts/how-to/how-to-setup-firebase-for-angular/ or https://firebase.google.com/docs/web/setup)
+4. Add configuration file "firebaseConfig" object to enviroments/enviroment.ts file or keep the currently used one. (Links for helping with the setup: https://codinglatte.com/posts/how-to/how-to-setup-firebase-for-angular/ & https://firebase.google.com/docs/web/setup)
 5. Run "ng serve"
 6. Open http://localhost:4200 and use the app
