@@ -22,18 +22,18 @@ Authorized (Logged in) users:
 - Can access their own profile page
 - Can edit their profile 
 
-# The project is built with
+## The project is built with
 - Angular 8 - Front-end framework
 - Node.js - JavaScript runtime environment
 - Npm - Package manager
 - Firebase - NoSQL database used to store data online
 - Visual Studio Code - IDE
 
-# You will need to install before starting the project:
+## You will need to install before starting the project:
 - NodeJS (14.17.3 is used in this project)
 - Angular CLI (8.2.23 is used in this project)
 
-# Running the project
+## Running the project
 1. Clone this repo or save it as a zip
 2. Run "npm install"
 3. Check if the Angular Cli version matches (Note: The used version for the project is 8.3.23 and if you are using a newer version the code might not function correctly)
