@@ -35,7 +35,7 @@ Authorized (Logged in) users:
 
 ## Running the project
 1. Clone this repo or save it as a zip
-2. Open the project in your preferred IDE and Run "npm install" in the terminal
+2. Open the project in your preferred IDE (and enter into the art-gallery folder) and Run "npm install" in the terminal
 3. Check if the Angular Cli version matches **(Note: The used version for the project is 8.3.23 and if you are using a newer version the code might not function correctly)**
 4. Add configuration file "firebaseConfig" object to enviroments/enviroment.ts file or keep the currently used one. (Helpful links on how to set it up: https://codinglatte.com/posts/how-to/how-to-setup-firebase-for-angular/ & https://firebase.google.com/docs/web/setup)
 5. Run "ng serve"
