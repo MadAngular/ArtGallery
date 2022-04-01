@@ -1,24 +1,39 @@
 <div *ngIf="!editingMode">
   <div class="page-content page-container" id="page-content">
     <div class="padding">
-      <div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
+      <div
+        class="container mt-4 mb-4 p-3 d-flex justify-content-center centering"
+      >
         <div class="card p-4">
           <div
             class="image d-flex flex-column justify-content-center align-items-center"
           >
-            <img src="{{ photo }}" height="100" width="100" />
-            <span class="name mt-3 p-info m-username">{{ username }}</span>
-            <span class="idd">Artist</span>
-            <div class="text mt-3 p-info"><span>Profile Information</span></div>
-            <div class="text mt-3 p-info">
-              <span>Email: {{ email }}</span>
+            <img
+              class="profile-img"
+              src="{{ photo }}"
+              height="100"
+              width="100"
+              onerror="this.src='https://cdn-icons-png.flaticon.com/512/64/64572.png'"
+            />
+            <!--<span class="name mt-3 p-info m-username">{{ username }}</span>
+            <span class="idd role">Artist</span> -->
+            <div class="text mt-3 info"><span>Profile Information</span></div>
+            <div class="text mt-3 p-info p-text">
+              <span class="bold">Email: </span>
+              <span> {{ email }}</span>
             </div>
-            <div class="text mt-3 p-info">
-              <span>Username: {{ username }}</span>
+            <div class="text mt-3 p-info p-text">
+              <span class="bold">Username: </span>
+              <span>{{ username }}</span>
             </div>
-            <div class="text mt-3 p-info">
+            <div class="text mt-3 p-info p-text">
+              <span class="bold">Role: </span>
+              <span>Artist</span>
+            </div>
+            <div class="text mt-3 p-intro">
+              <span class="bold">Intro: </span>
               <span
-                >Intro: Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                >Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Voluptas molestias modi facilis, assumenda corporis debitis.
                 Eveniet ipsum commodi distinctio sit excepturi aut sint, ut,
                 repudiandae, molestiae inventore ipsa reiciendis ad. Lorem,
