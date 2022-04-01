@@ -3,7 +3,6 @@ body {
 }
 
 .padding {
-  padding: 20rem;
   background-image: url("/assets/dart.jpg");
 }
 
@@ -32,30 +31,30 @@ body {
   padding: 40px 0;
 }
 
-.card-block {
-  padding: 1.25rem;
-}
-
 img {
-  width: 100%;
-  margin-top: auto
+  width: 50%;
+  height: 50%;
 }
 
-.move {
-  padding-top: 20px;
-  padding-left: 70px;
+.m-username {
+  font-size: 30px;
+  font-weight: bold;
 }
 
-.place {
-  margin-top: 40px;
-  margin-left: 70px;
+.p-info {
+  border-bottom: 1px solid lightgrey;
+  max-width: 50%;
 }
 
-.change {
-  margin-top: 15px;
-  margin-bottom: 15px;
+.p-btn-ctn {
+  padding-top: 60px;
 }
 
-.this {
+.p-btn {
+  padding: 5px 15px;
+  border-radius: 8px;
+}
+
+.preview {
   text-align: center;
 }
