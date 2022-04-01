@@ -2,8 +2,9 @@ body {
   background-color: #f9f9fa;
 }
 
-.padding {
+#page-content {
   background-image: url("/assets/dart.jpg");
+  min-height: 100vh;
 }
 
 .card {
@@ -20,10 +21,7 @@ body {
 }
 
 .bg-c-lite-green {
-  background: -webkit-gradient(
-    from(#7863f2),
-    to(#ea00ff)
-  );
+  background: -webkit-gradient(from(#7863f2), to(#ea00ff));
   background: linear-gradient(to right, #7863f2, #ea00ff);
 }
 
@@ -31,19 +29,38 @@ body {
   padding: 40px 0;
 }
 
-img {
-  width: 50%;
-  height: 50%;
+.bold {
+  font-weight: bold;
+}
+
+.profile-img {
+  min-width: 400px;
+  height: auto;
 }
 
 .m-username {
-  font-size: 30px;
+  font-size: 40px;
   font-weight: bold;
+}
+
+.info {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.p-text {
+  font-size: 20px;
 }
 
 .p-info {
   border-bottom: 1px solid lightgrey;
-  max-width: 50%;
+  padding: 5px 0;
+}
+
+.p-intro {
+  padding: 10px 60px 0;
+  width: 750px;
+  font-size: 18px;
 }
 
 .p-btn-ctn {
