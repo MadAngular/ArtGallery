@@ -1,21 +1,21 @@
 <div *ngIf="isCollectionLoaded" id="art-holder">
   <ng-container *ngFor="let art of this.collection">
     <div class="card overflow-hidden current-card details">
-      <div class="card-body">
-        <p class="card-text">{{ art.data().title }}</p>
-      </div>
-      <img
-        class="card-image"
-        src="{{ art.data().imageURL }}"
-        alt="Card image cap"
-      />
-      <a class="btn" routerLink="/art/details/{{ art.id }}">Details</a>
+      <a class="btn" routerLink="/art/details/{{ art.id }}">
+        <div class="card-body">
+        </div>
+        <img
+          class="card-image"
+          src="{{ art.data().imageURL }}"
+          alt="Card image cap"
+        />
+      </a>
     </div>
   </ng-container>
 
   <ng-container *ngIf="!isCollectionLoaded">
     <div>
-      <h1>No art yet!</h1>
+      <h1>No art has been uploaded yet!</h1>
     </div>
   </ng-container>
 </div>
